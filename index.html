@@ -12,48 +12,55 @@
     <link
       rel="stylesheet"
       href="https://qns2c88qif.execute-api.ap-northeast-2.amazonaws.com/v1/api/css/drop_fontstream_css/?sid=gAAAAABpOSOELa13yqSiXud3sZnVBP2uHJhHzLwWgt-HwVZ951lyhNu-sh5_uKRJfepaNlHHfpsvmnezGZj1gaMIZTLjJ2d4e1RBmg_ESMLWkStNa1SfFv11Wo6KDrulZBpHsd2yV6MHs14uVMuDKOogOHTNT7p2E8frhie9hfyjC096fwFFdoBUxW07uo1rQ6LK3wyh0T1O9By1qP9aUjJbjnftbZXiSZy2VWTx3J11cD-JYNkAsiRffOqwTQb9pOqOQMzcJWDp"
+      charset="utf-8"
+      referrerpolicy="origin"
     />
 
+    <!-- GSAP -->
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/index.css" />
 
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-    <script defer src="js/index.js"></script>
-
-    <title>intro seesaw</title>
+    <title>Intro Seesaw</title>
   </head>
 
   <body>
     <div id="page-wrap">
       <div id="layout">
+        <!-- ✅ 메타: 메인페이지처럼 상단 여백 60px 라인 -->
+        <div id="meta-line" aria-hidden="true">
+          <span>기록자 : 2023720006 노희지</span>
+          <span
+            >출처 : 심석용특강 스크립트 및 pdf,<br />
+            YG ENTERTAINMENT &amp; The First Penguin<br />
+            공식 웹사이트 로고
+          </span>
+        </div>
+
         <div id="intro-wrap">
-          <div id="seesaw">
-            <!-- 회전되는 부분 -->
-            <div id="rotate-wrap">
-              <div id="bar"></div>
-              <button id="card">who?</button>
+          <div id="seesaw" aria-label="intro seesaw">
+            <!-- 회전 영역 -->
+            <div id="rotate-wrap" aria-label="seesaw rotate">
+              <div id="bar" aria-hidden="true"></div>
+              <button id="card" class="who-blink" type="button">
+                <span class="card-text">who?</span>
+              </button>
             </div>
 
-            <!-- 고정 받침 -->
-            <div id="tri"></div>
+            <!-- 삼각 받침 -->
+            <svg id="tri" viewBox="0 0 240 170" aria-hidden="true">
+              <polygon points="120,10 230,160 10,160"></polygon>
+            </svg>
           </div>
 
-          <p id="intro-line">
-            지금,
-            <a
-              class="intro-link blink"
-              href="https://shgmlwl.github.io/-_2023720006-/"
-              target="_blank"
-              >심석용</a
-            >의
-            <a
-              class="intro-link blink"
-              href="https://shgmlwl.github.io/seesaw/"
-              target="_blank"
-              >시소</a
-            >는 어디로 기울고 있는가?
-          </p>
+          <!-- 타이핑 문장 -->
+          <p id="intro-line" aria-live="polite"></p>
         </div>
       </div>
     </div>
+
+    <!-- JS -->
+    <script src="js/index.js"></script>
   </body>
 </html>
